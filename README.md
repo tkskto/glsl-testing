@@ -1,2 +1,3 @@
 # glsl-testing
-write test to understand GLSL built-in methods.
+
+GLSL ESを理解するためにテストを書く。

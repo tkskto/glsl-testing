@@ -1,0 +1,8 @@
+{
+  "label": "Built-In Functions",
+  "position": 2,
+  "link": {
+    "type": "generated-index",
+    "description": "GLSLの組み込み関数をテストで理解する"
+  }
+}
