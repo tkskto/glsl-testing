@@ -6,17 +6,32 @@ sidebar_position: 1
 
 GLSLの型や関数をテストで理解することを目的としたドキュメントです。
 
-お気持ちは個人のブログに書いておりますので、よければご覧いただけると嬉しいです。
+お気持ちは[個人のブログ](https://tkskto.me/blog/)に書いておりますので、よければご覧いただけると嬉しいです。
 
 テストの内容は執筆開始時点の最新バージョンである[OpenGL ES 3.2](https://registry.khronos.org/OpenGL-Refpages/es3/)の仕様をもとに、自作したものです。
 
-また、中には単純なコードでテストできないAPIも存在しているので、その辺はいったん省略します。テストする手段が見つかったら追加したいとは思ってます。ひらめき待ちです。
+またテストするためにGLSLの基本型や関数もJavaScriptで再実装しなおしていますが、再実装することが目的ではないので簡素化したりしてるところがいくつかあります。
 
-なにか改善ポイントを見つけたら、[GitHub](https://github.com/tkskto/glsl-testing)にIssueを立てるか、PRを作成いただけると幸いです。
+中には単純なコードでテストできないAPIも存在しているので、その辺もいったん省略します。テストする手段が見つかったら追加したいとは思ってます。ひらめき待ちです。
+
+執筆時点で筆者はCGの知識がほとんどありません。なにか改善ポイントを見つけたら、[GitHub](https://github.com/tkskto/glsl-testing)にIssueを立てるか、PRを作成いただけると幸いです。
+
+## いくつかの前提
+
+GLSLの関数にはいくつかの型が明記されていて、対応表は以下の通りとなります。
+
+| 型        | 対象                           | 説明                  |
+|----------|--------------------------------|---------------------|
+| genFType | `float`,`vec2`,`vec3`,`vec4`   | 浮動小数点型の値を扱う型をまとめた型  |
+| genIType | `int`,`ivec2`,`ivec3`,`ivec4`  | 整数型の値を扱う型をまとめた型     |
+| genUType | `uint`,`uvec2`,`uvec3`,`uvec4` | 符号なし整数型の値を扱う型をまとめた型 |
+| genBType | `bool`,`bvec2`,`bvec3`,`bvec4` | 真偽値型の値を扱う型をまとめた型    |
+
+※ JavaScriptにおける数値は`number`、`BigInt`型しかないため、厳密な精度、処理はできていません。
 
 ## リファレンス集
 
-基本HTML版を見ており、PDF版やOpenGLは基本参照しないです。
+基本HTML版を見ており、PDF版やOpenGL本体は基本参照しないです。
 
 *   [The OpenGL ES® Shading Language, Version 3.20.6](https://registry.khronos.org/OpenGL/specs/es/3.2/GLSL_ES_Specification_3.20.html)
 *   [OpenGL® ES 3.2 Reference Pages](https://registry.khronos.org/OpenGL-Refpages/es3/)

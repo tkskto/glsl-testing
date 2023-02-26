@@ -4,7 +4,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'GLSLをテストで理解する',
+  title: 'GLSL Testing Docs',
   url: 'https://your-docusaurus-test-site.com', // TODO
   baseUrl: '/',
   projectName: 'glsl-testing',
@@ -38,7 +38,7 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: 'GLSLをテストで理解する',
+        title: 'GLSL Testing Docs',
       },
       prism: {
         theme: lightCodeTheme,
