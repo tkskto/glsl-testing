@@ -16,8 +16,9 @@ GLSLの型や関数をテストで理解することを目的としたドキュ�
 
 ## リファレンス集
 
+基本HTML版を見ており、PDF版やOpenGLは基本参照しないです。
+
 *   [The OpenGL ES® Shading Language, Version 3.20.6](https://registry.khronos.org/OpenGL/specs/es/3.2/GLSL_ES_Specification_3.20.html)
 *   [OpenGL® ES 3.2 Reference Pages](https://registry.khronos.org/OpenGL-Refpages/es3/)
 *   [OpenGL ES 3.2 API Reference Guide](https://www.khronos.org/files/opengles32-quick-reference-card.pdf)
 *   [OpenGL® ES Version 3.2 (May 5, 2022)](https://registry.khronos.org/OpenGL/specs/es/3.2/es_spec_3.2.pdf)
-*   [The OpenGL® Shading Language, Version 4.60.7](https://registry.khronos.org/OpenGL/specs/gl/GLSLangSpec.4.60.html)

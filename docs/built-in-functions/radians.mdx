@@ -1,0 +1,25 @@
+---
+title: radians
+description: radians関数をテストで理解する
+slug: /radians
+sidebar_position: 1
+reference:
+    - https://registry.khronos.org/OpenGL/specs/es/3.2/GLSL_ES_Specification_3.20.html#angle-and-trigonometry-functions
+    - https://registry.khronos.org/OpenGL-Refpages/es3/html/radians.xhtml
+---
+
+import CodeBlock from '@theme/CodeBlock';
+import TestCode from '!!raw-loader!../../test/spec/radians.test.mjs';
+import ImplementCode from '!!raw-loader!../../test/built-in-functions/radians.mts';
+
+## 説明
+
+度数法で表現される値を弧度法に変換する。
+
+## テスト
+
+<CodeBlock language="js">{TestCode}</CodeBlock>
+
+## 実装
+
+<CodeBlock language="ts">{ImplementCode}</CodeBlock>
