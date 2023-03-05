@@ -20,10 +20,7 @@ export class vec4<T> {
             return;
         }
 
-        if (
-            arg1 instanceof vec3 &&
-            (arg2 && !(arg2 instanceof vec2) && !(arg2 instanceof vec3))
-        ) {
+        if (arg1 instanceof vec3 && typeof arg2 === 'number') {
             this.#x = arg1.x;
             this.#y = arg1.y;
             this.#z = arg1.z;
@@ -32,10 +29,7 @@ export class vec4<T> {
             return;
         }
 
-        if (
-            !(arg1 instanceof vec2) && !(arg1 instanceof vec3) &&
-            arg2 instanceof vec3
-        ) {
+        if (typeof arg1 === 'number' && arg2 instanceof vec3) {
             this.#x = arg1;
             this.#y = arg2.x;
             this.#z = arg2.y;
@@ -53,11 +47,7 @@ export class vec4<T> {
             return;
         }
 
-        if (
-            !(arg1 instanceof vec2) && !(arg1 instanceof vec3) &&
-            (arg2 && !(arg2 instanceof vec2)) && (arg2 && !(arg2 instanceof vec3)) &&
-            arg3 instanceof vec2
-        ) {
+        if (typeof arg1 === 'number' && typeof arg2 === 'number' && arg3 instanceof vec2) {
             this.#x = arg1;
             this.#y = arg2;
             this.#z = arg3.x;
@@ -66,8 +56,8 @@ export class vec4<T> {
             return;
         }
 
-        if (!arg2 && !arg3 && !arg4) {
-            if (!(arg1 instanceof vec2) && !(arg1 instanceof vec3)) {
+        if (arg2 === undefined && arg3 === undefined && arg4 === undefined) {
+            if (typeof arg1 === 'number') {
                 this.#x = arg1;
                 this.#y = arg1;
                 this.#z = arg1;
@@ -77,12 +67,7 @@ export class vec4<T> {
             }
         }
 
-        if (
-            !(arg1 instanceof vec2) && !(arg1 instanceof vec3) &&
-            (arg2 && !(arg2 instanceof vec2)) && (arg2 && !(arg2 instanceof vec3)) &&
-            (arg3 && !(arg3 instanceof vec2)) &&
-            arg4
-        ) {
+        if (typeof arg1 === 'number' && typeof arg2 === 'number' && typeof arg3 === 'number' && typeof arg4 === 'number') {
             this.#x = arg1;
             this.#y = arg2;
             this.#z = arg3;

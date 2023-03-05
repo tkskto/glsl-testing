@@ -1,0 +1,33 @@
+---
+title: tan
+description: tan関数をテストで理解する
+slug: /tan
+sidebar_position: 3
+reference:
+    - https://registry.khronos.org/OpenGL/specs/es/3.2/GLSL_ES_Specification_3.20.html#angle-and-trigonometry-functions
+    - https://registry.khronos.org/OpenGL-Refpages/es3/html/tan.xhtml
+see_also:
+    - atan
+    - tanh
+    - atanh
+tags:
+    - Angle
+---
+
+import CodeBlock from '@theme/CodeBlock';
+import TestCode from '!!raw-loader!../../test/spec/tan.test.mjs';
+import ImplementCode from '!!raw-loader!../../test/built-in-functions/tan.mts';
+
+## 説明
+
+引数に渡された値をθとして、`tan(θ)`の値を返す。
+
+`sin`や`cos`と違って連続的ではないグラフが特殊で、使い所がよく分からない。`θ`が`π/4`の時の`1`となる。
+
+## JSでの実装例
+
+<CodeBlock language="ts">{ImplementCode}</CodeBlock>
+
+## テスト
+
+<CodeBlock language="js">{TestCode}</CodeBlock>

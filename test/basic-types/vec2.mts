@@ -11,7 +11,7 @@ export class vec2<T> {
             return;
         }
 
-        if (!arg2) {
+        if (typeof arg1 === 'number' && arg2 === undefined) {
             this.#x = arg1;
             this.#y = arg1;
 

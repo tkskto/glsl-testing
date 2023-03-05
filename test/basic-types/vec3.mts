@@ -16,7 +16,7 @@ export class vec3<T> {
             return;
         }
 
-        if (arg1 instanceof vec2 && arg2 && !(arg2 instanceof vec2)) {
+        if (arg1 instanceof vec2 && typeof arg2 === 'number') {
             this.#x = arg1.x;
             this.#y = arg1.y;
             this.#z = arg2;
@@ -24,7 +24,7 @@ export class vec3<T> {
             return;
         }
 
-        if (!(arg1 instanceof vec2) && arg2 instanceof vec2) {
+        if (typeof arg1 === 'number' && arg2 instanceof vec2) {
             this.#x = arg1;
             this.#y = arg2.x;
             this.#z = arg2.y;
@@ -32,17 +32,15 @@ export class vec3<T> {
             return;
         }
 
-        if (!arg2 && !arg3) {
-            if (!(arg1 instanceof vec2)) {
-                this.#x = arg1;
-                this.#y = arg1;
-                this.#z = arg1;
+        if (typeof arg1 === 'number' && arg2 === undefined && arg3 === undefined) {
+            this.#x = arg1;
+            this.#y = arg1;
+            this.#z = arg1;
 
-                return;
-            }
+            return;
         }
 
-        if (!(arg1 instanceof vec2) && arg2 && !(arg2 instanceof vec2) && arg3) {
+        if (typeof arg1 === 'number' && typeof arg2 === 'number' && typeof arg3 === 'number') {
             this.#x = arg1;
             this.#y = arg2;
             this.#z = arg3;

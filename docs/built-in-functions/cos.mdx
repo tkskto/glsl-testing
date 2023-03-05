@@ -1,0 +1,31 @@
+---
+title: cos
+description: cos関数をテストで理解する
+slug: /cos
+sidebar_position: 3
+reference:
+    - https://registry.khronos.org/OpenGL/specs/es/3.2/GLSL_ES_Specification_3.20.html#angle-and-trigonometry-functions
+    - https://registry.khronos.org/OpenGL-Refpages/es3/html/cos.xhtml
+see_also:
+    - acos
+    - cosh
+    - acosh
+tags:
+    - Angle
+---
+
+import CodeBlock from '@theme/CodeBlock';
+import TestCode from '!!raw-loader!../../test/spec/cos.test.mjs';
+import ImplementCode from '!!raw-loader!../../test/built-in-functions/cos.mts';
+
+## 説明
+
+引数に渡された値をθとして、`cos(θ)`の値を返す。単位円を考えた時、円周上のある点Pのx座標をとる時によく使う。
+
+## JSでの実装例
+
+<CodeBlock language="ts">{ImplementCode}</CodeBlock>
+
+## テスト
+
+<CodeBlock language="js">{TestCode}</CodeBlock>
