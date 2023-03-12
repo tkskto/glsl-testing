@@ -1,0 +1,33 @@
+---
+title: atan
+description: atan関数をテストで理解する
+slug: /atan
+sidebar_position: 3
+reference:
+    - https://registry.khronos.org/OpenGL/specs/es/3.2/GLSL_ES_Specification_3.20.html#angle-and-trigonometry-functions
+    - https://registry.khronos.org/OpenGL-Refpages/es3/html/atan.xhtml
+see_also:
+    - tan
+    - tanh
+    - atanh
+tags:
+    - Angle
+---
+
+import CodeBlock from '@theme/CodeBlock';
+import TestCode from '!!raw-loader!../../test/spec/atan.test.mjs';
+import ImplementCode from '!!raw-loader!../../test/built-in-functions/atan.mts';
+
+## 説明
+
+`tan`は角度を与えると対応する正接値を返す一方で、`atan`は正接値を与えると対応する角度を返す。
+
+x, y, z軸にそって回転する際に使う。らしい。
+
+## JSでの実装例
+
+<CodeBlock language="ts">{ImplementCode}</CodeBlock>
+
+## テスト
+
+<CodeBlock language="js">{TestCode}</CodeBlock>
