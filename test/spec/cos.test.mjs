@@ -15,27 +15,27 @@ test('cos with simple number', (t) => {
 });
 
 test('cos with vec2', (t) => {
-    t.is(cos(new vec2(0)).x, 1);
-    t.is(cos(new vec2(radians(90))).y, 0);
-    t.is(cos(new vec2(radians(180))).x, -1);
-    t.is(cos(new vec2(radians(270))).y, 0);
-    t.is(cos(new vec2(radians(360))).x, 1);
-    t.is(cos(new vec2(radians(450))).y, 0);
+    t.is(cos(vec2(0)).x, 1);
+    t.is(cos(vec2(radians(90))).y, 0);
+    t.is(cos(vec2(radians(180))).x, -1);
+    t.is(cos(vec2(radians(270))).y, 0);
+    t.is(cos(vec2(radians(360))).x, 1);
+    t.is(cos(vec2(radians(450))).y, 0);
 
-    const vector2 = new vec2(radians(180), radians(360));
+    const vector2 = vec2(radians(180), radians(360));
 
     t.is(cos(vector2).x, -1);
     t.is(cos(vector2).y, 1);
 });
 
 test('cos with vec3', (t) => {
-    t.is(cos(new vec3(0)).x, 1);
-    t.is(cos(new vec3(radians(90))).y, 0);
-    t.is(cos(new vec3(radians(180))).z, -1);
-    t.is(cos(new vec3(radians(270))).x, 0);
-    t.is(cos(new vec3(radians(360))).y, 1);
+    t.is(cos(vec3(0)).x, 1);
+    t.is(cos(vec3(radians(90))).y, 0);
+    t.is(cos(vec3(radians(180))).z, -1);
+    t.is(cos(vec3(radians(270))).x, 0);
+    t.is(cos(vec3(radians(360))).y, 1);
 
-    const vector3 = new vec3(radians(90), radians(180), radians(360));
+    const vector3 = vec3(radians(90), radians(180), radians(360));
 
     t.is(cos(vector3).x, 0);
     t.is(cos(vector3).y, -1);
@@ -43,13 +43,13 @@ test('cos with vec3', (t) => {
 });
 
 test('cos with vec4', (t) => {
-    t.is(cos(new vec4(0)).x, 1);
-    t.is(cos(new vec4(radians(90))).y, 0);
-    t.is(cos(new vec4(radians(180))).z, -1);
-    t.is(cos(new vec4(radians(270))).w, 0);
-    t.is(cos(new vec4(radians(360))).x, 1);
+    t.is(cos(vec4(0)).x, 1);
+    t.is(cos(vec4(radians(90))).y, 0);
+    t.is(cos(vec4(radians(180))).z, -1);
+    t.is(cos(vec4(radians(270))).w, 0);
+    t.is(cos(vec4(radians(360))).x, 1);
 
-    const vector4 = new vec4(radians(90), radians(180), radians(270), radians(360));
+    const vector4 = vec4(radians(90), radians(180), radians(270), radians(360));
 
     t.is(cos(vector4).x, 0);
     t.is(cos(vector4).y, -1);

@@ -1,14 +1,14 @@
-import {vec2} from './vec2.mjs';
+import {vector2, vec2} from './vec2.mjs';
 
-export class vec3<T> {
+export class vector3<T> {
     #x: T;
 
     #y: T;
 
     #z: T;
 
-    constructor(arg1: T | vec2<T> | vec3<T>, arg2?: T | vec2<T>, arg3?: T) {
-        if (arg1 instanceof vec3) {
+    constructor(arg1: T | vector2<T> | vector3<T>, arg2?: T | vector2<T>, arg3?: T) {
+        if (arg1 instanceof vector3) {
             this.#x = arg1.x;
             this.#y = arg1.y;
             this.#z = arg1.z;
@@ -16,7 +16,7 @@ export class vec3<T> {
             return;
         }
 
-        if (arg1 instanceof vec2 && typeof arg2 === 'number') {
+        if (arg1 instanceof vector2 && typeof arg2 === 'number') {
             this.#x = arg1.x;
             this.#y = arg1.y;
             this.#z = arg2;
@@ -24,7 +24,7 @@ export class vec3<T> {
             return;
         }
 
-        if (typeof arg1 === 'number' && arg2 instanceof vec2) {
+        if (typeof arg1 === 'number' && arg2 instanceof vector2) {
             this.#x = arg1;
             this.#y = arg2.x;
             this.#z = arg2.y;
@@ -63,23 +63,27 @@ export class vec3<T> {
         return this.#z;
     }
 
-    get xy(): vec2<T> {
-        return new vec2<T>(this.#x, this.#y);
+    get xy(): vector2<T> {
+        return vec2<T>(this.#x, this.#y);
     }
 
-    get xx(): vec2<T> {
-        return new vec2<T>(this.#x, this.#x);
+    get xx(): vector2<T> {
+        return vec2<T>(this.#x, this.#x);
     }
 
-    get yy(): vec2<T> {
-        return new vec2<T>(this.#y, this.#y);
+    get yy(): vector2<T> {
+        return vec2<T>(this.#y, this.#y);
     }
 
-    get xyz(): vec3<T> {
-        return new vec3<T>(this.#x, this.#y, this.#z);
+    get xyz(): vector3<T> {
+        return vec3<T>(this.#x, this.#y, this.#z);
     }
 
-    get zzz(): vec3<T> {
-        return new vec3<T>(this.#z, this.#z, this.#z);
+    get zzz(): vector3<T> {
+        return vec3<T>(this.#z, this.#z, this.#z);
     }
 }
+
+export const vec3 = <T,>(arg1: T | vector2<T> | vector3<T>, arg2?: T | vector2<T>, arg3?: T) => {
+    return new vector3(arg1, arg2, arg3);
+};

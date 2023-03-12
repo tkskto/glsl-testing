@@ -1,10 +1,10 @@
-export class vec2<T> {
+export class vector2<T> {
     #x: T;
 
     #y: T;
 
-    constructor(arg1: T | vec2<T>, arg2?: T) {
-        if (arg1 instanceof vec2) {
+    constructor(arg1: T | vector2<T>, arg2?: T) {
+        if (arg1 instanceof vector2) {
             this.#x = arg1.x;
             this.#y = arg1.y;
 
@@ -18,7 +18,7 @@ export class vec2<T> {
             return;
         }
 
-        if (arg1 && arg2) {
+        if (typeof arg1 === 'number' && typeof arg2 === 'number') {
             this.#x = arg1;
             this.#y = arg2;
 
@@ -36,15 +36,19 @@ export class vec2<T> {
         return this.#y;
     }
 
-    get xy(): vec2<T> {
-        return new vec2<T>(this.#x, this.#y);
+    get xy(): vector2<T> {
+        return new vector2<T>(this.#x, this.#y);
     }
 
-    get xx(): vec2<T> {
-        return new vec2<T>(this.#x, this.#x);
+    get xx(): vector2<T> {
+        return new vector2<T>(this.#x, this.#x);
     }
 
-    get yy(): vec2<T> {
-        return new vec2<T>(this.#y, this.#y);
+    get yy(): vector2<T> {
+        return new vector2<T>(this.#y, this.#y);
     }
 }
+
+export const vec2 = <T,>(arg1: T | vector2<T>, arg2?: T) => {
+    return new vector2(arg1, arg2);
+};

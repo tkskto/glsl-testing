@@ -1,7 +1,7 @@
-import {vec2} from './vec2.mjs';
-import {vec3} from './vec3.mjs';
+import {vector2, vec2} from './vec2.mjs';
+import {vector3, vec3} from './vec3.mjs';
 
-export class vec4<T> {
+export class vector4<T> {
     #x: T;
 
     #y: T;
@@ -10,8 +10,8 @@ export class vec4<T> {
 
     #w: T;
 
-    constructor(arg1: T | vec2<T> | vec3<T> | vec4<T>, arg2?: T | vec2<T> | vec3<T>, arg3?: T | vec2<T>, arg4?: T) {
-        if (arg1 instanceof vec4) {
+    constructor(arg1: T | vector2<T> | vector3<T> | vector4<T>, arg2?: T | vector2<T> | vector3<T>, arg3?: T | vector2<T>, arg4?: T) {
+        if (arg1 instanceof vector4) {
             this.#x = arg1.x;
             this.#y = arg1.y;
             this.#z = arg1.z;
@@ -20,7 +20,7 @@ export class vec4<T> {
             return;
         }
 
-        if (arg1 instanceof vec3 && typeof arg2 === 'number') {
+        if (arg1 instanceof vector3 && typeof arg2 === 'number') {
             this.#x = arg1.x;
             this.#y = arg1.y;
             this.#z = arg1.z;
@@ -29,7 +29,7 @@ export class vec4<T> {
             return;
         }
 
-        if (typeof arg1 === 'number' && arg2 instanceof vec3) {
+        if (typeof arg1 === 'number' && arg2 instanceof vector3) {
             this.#x = arg1;
             this.#y = arg2.x;
             this.#z = arg2.y;
@@ -38,7 +38,7 @@ export class vec4<T> {
             return;
         }
 
-        if (arg1 instanceof vec2 && arg2 instanceof vec2) {
+        if (arg1 instanceof vector2 && arg2 instanceof vector2) {
             this.#x = arg1.x;
             this.#y = arg1.y;
             this.#z = arg2.x;
@@ -47,7 +47,7 @@ export class vec4<T> {
             return;
         }
 
-        if (typeof arg1 === 'number' && typeof arg2 === 'number' && arg3 instanceof vec2) {
+        if (typeof arg1 === 'number' && typeof arg2 === 'number' && arg3 instanceof vector2) {
             this.#x = arg1;
             this.#y = arg2;
             this.#z = arg3.x;
@@ -95,31 +95,35 @@ export class vec4<T> {
         return this.#w;
     }
 
-    get xy(): vec2<T> {
-        return new vec2<T>(this.#x, this.#y);
+    get xy(): vector2<T> {
+        return vec2<T>(this.#x, this.#y);
     }
 
-    get xx(): vec2<T> {
-        return new vec2<T>(this.#x, this.#x);
+    get xx(): vector2<T> {
+        return vec2<T>(this.#x, this.#x);
     }
 
-    get yy(): vec2<T> {
-        return new vec2<T>(this.#y, this.#y);
+    get yy(): vector2<T> {
+        return vec2<T>(this.#y, this.#y);
     }
 
-    get xyz(): vec3<T> {
-        return new vec3<T>(this.#x, this.#y, this.#z);
+    get xyz(): vector3<T> {
+        return vec3<T>(this.#x, this.#y, this.#z);
     }
 
-    get zzz(): vec3<T> {
-        return new vec3<T>(this.#z, this.#z, this.#z);
+    get zzz(): vector3<T> {
+        return vec3<T>(this.#z, this.#z, this.#z);
     }
 
-    get xyzw(): vec4<T> {
-        return new vec4<T>(this.#x, this.#y, this.#z, this.#w);
+    get xyzw(): vector4<T> {
+        return vec4<T>(this.#x, this.#y, this.#z, this.#w);
     }
 
-    get wwww(): vec4<T> {
-        return new vec4<T>(this.#w, this.#w, this.#w, this.#w);
+    get wwww(): vector4<T> {
+        return vec4<T>(this.#w, this.#w, this.#w, this.#w);
     }
 }
+
+export const vec4 = <T,>(arg1: T | vector2<T> | vector3<T> | vector4<T>, arg2?: T | vector2<T> | vector3<T>, arg3?: T | vector2<T>, arg4?: T) => {
+    return new vector4(arg1, arg2, arg3, arg4);
+};
