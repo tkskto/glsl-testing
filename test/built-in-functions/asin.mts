@@ -18,4 +18,6 @@ export function asin(value: genFType): genFType {
     } else if (value instanceof vector4) {
         return vec4(arcSine(value.x), arcSine(value.y), arcSine(value.z), arcSine(value.w));
     }
+
+    throw new Error('asin: no matching overloaded function found');
 }

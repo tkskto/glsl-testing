@@ -18,4 +18,6 @@ export function acos(value: genFType): genFType {
     } else if (value instanceof vector4) {
         return vec4(arcCosine(value.x), arcCosine(value.y), arcCosine(value.z), arcCosine(value.w));
     }
+
+    throw new Error('acos: no matching overloaded function found');
 }

@@ -1,0 +1,27 @@
+---
+title: dot
+description: dot関数をテストで理解する
+slug: /dot
+sidebar_position: 4
+reference:
+    - https://registry.khronos.org/OpenGL/specs/es/3.2/GLSL_ES_Specification_3.20.html#geometric-functions
+    - https://registry.khronos.org/OpenGL-Refpages/es3/html/dot.xhtml
+see_also:
+    - degrees
+---
+
+import CodeBlock from '@theme/CodeBlock';
+import TestCode from '!!raw-loader!../../test/spec/dot.test.mjs';
+import ImplementCode from '!!raw-loader!../../test/built-in-functions/dot.mts';
+
+## 説明
+
+2つの値の内積を取得します。引数に渡せる型は `float`, `vec2`, `vec3`, `vec4` です。
+
+## JSでの実装例
+
+<CodeBlock language="ts">{ImplementCode}</CodeBlock>
+
+## テスト
+
+<CodeBlock language="js">{TestCode}</CodeBlock>

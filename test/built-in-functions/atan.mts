@@ -9,10 +9,6 @@ const arcTangent = (y: number, x: number) => {
 }
 
 export function atan(y: genFType, x: genFType): genFType {
-    if (typeof y !== typeof x) {
-        throw new Error('atan: no matching overloaded function found');
-    }
-
     if (typeof y === 'number' && typeof x === 'number') {
         return arcTangent(y, x);
     } else if (y instanceof vector2 && x instanceof vector2) {
@@ -22,4 +18,6 @@ export function atan(y: genFType, x: genFType): genFType {
     } else if (y instanceof vector4 && x instanceof vector4) {
         return vec4(arcTangent(y.x, x.x), arcTangent(y.y, x.y), arcTangent(y.z, x.z), arcTangent(y.w, x.w));
     }
+
+    throw new Error('atan: no matching overloaded function found');
 }
