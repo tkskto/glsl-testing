@@ -14,5 +14,5 @@ export function dot(x: genFType, y: genFType): number {
         return x.x * y.x + x.y * y.y + x.z * y.z + x.w * y.w;
     }
 
-    throw new Error('dot : no matching overloaded function found')
+    throw new Error('dot : no matching overloaded function found');
 }
