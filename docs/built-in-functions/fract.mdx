@@ -1,0 +1,28 @@
+---
+title: fract
+description: fract関数をテストで理解する
+slug: /fract
+reference:
+    - https://registry.khronos.org/OpenGL/specs/es/3.2/GLSL_ES_Specification_3.20.html#common-functions
+    - https://registry.khronos.org/OpenGL-Refpages/es3/html/fract.xhtml
+tags:
+    - Common
+---
+
+import CodeBlock from '@theme/CodeBlock';
+import TestCode from '!!raw-loader!../../scripts/built-in-functions/fract.test.mjs';
+import ImplementCode from '!!raw-loader!../../scripts/built-in-functions/fract.mts';
+
+## 説明
+
+`fract`は、引数に与えられた実数（浮動小数点数）から整数部分を引いた、小数部分（fractional part）を返す関数です。
+
+引数が負の値の場合でも、常に非負の小数部分が得られます。
+
+## JSでの実装例
+
+<CodeBlock language="ts">{ImplementCode}</CodeBlock>
+
+## テスト
+
+<CodeBlock language="js">{TestCode}</CodeBlock>

@@ -10,7 +10,7 @@
     "serve": "docusaurus serve",
     "write-translations": "docusaurus write-translations",
     "write-heading-ids": "docusaurus write-heading-ids",
-    "test": "ava"
+    "test": "node --experimental-strip-types --test ./scripts/**/*.test.mjs"
   },
   "dependencies": {
     "@docusaurus/core": "2.4.1",
@@ -28,21 +28,9 @@
   },
   "devDependencies": {
     "@docusaurus/module-type-aliases": "2.4.1",
-    "ava": "5.2.0",
     "ts-node": "10.9.1"
   },
   "engines": {
-    "node": ">=18"
-  },
-  "ava": {
-    "files": [
-      "./test/spec/*.test.mjs"
-    ],
-    "extensions": {
-      "mjs": true
-    },
-    "nodeArguments": [
-      "--loader=ts-node/esm"
-    ]
+    "node": ">=22"
   }
 }
