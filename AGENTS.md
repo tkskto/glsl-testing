@@ -10,6 +10,7 @@ This repository provides documentation and tests for GLSL built-in functions. To
 - Vector helpers such as `vec2`, `vec3`, and `vec4` are defined in `test/basic-types`.
 
 ## Development
+
 - Use Node.js 18 or later.
 - Run `npm test` before committing to ensure all tests pass.
 - Keep code style consistent with existing files (4-space indentation, ES modules).
