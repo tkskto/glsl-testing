@@ -23,5 +23,5 @@ export function distance(x: genFType, y: genFType): number {
         return Math.sqrt(dx * dx + dy * dy + dz * dz + dw * dw);
     }
 
-    throw new Error('distance : no matching overloaded function found');
+    throw new Error('distance: no matching overloaded function found');
 }
