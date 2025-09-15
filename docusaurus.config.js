@@ -1,8 +1,12 @@
 // @ts-check
-import { themes } from 'prism-react-renderer';
+import {themes} from 'prism-react-renderer';
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
+import path from 'node:path';
+import {fileURLToPath} from 'node:url';
 
-const math = require('remark-math');
-const katex = require('rehype-katex');
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -24,14 +28,14 @@ const config = {
       ({
         docs: {
           routeBasePath: '/',
-          sidebarPath: require.resolve('./sidebars.js'),
+          sidebarPath: path.resolve(__dirname, './sidebars.js'),
           editUrl: 'https://github.com/tkskto/glsl-testing',
-          remarkPlugins: [math],
-          rehypePlugins: [katex],
+          remarkPlugins: [remarkMath],
+          rehypePlugins: [rehypeKatex],
         },
         blog: false,
         theme: {
-          customCss: require.resolve('./src/css/custom.css'),
+          customCss: path.resolve(__dirname, './src/css/custom.css'),
         },
       }),
     ],
@@ -65,4 +69,4 @@ const config = {
   themes: ['@docusaurus/theme-mermaid'],
 };
 
-module.exports = config;
+export default config;
