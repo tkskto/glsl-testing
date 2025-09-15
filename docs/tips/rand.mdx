@@ -1,0 +1,21 @@
+---
+title: rand
+description: randをテストで理解する
+slug: /rand
+reference:
+    - https://github.com/stegu/webgl-noise/
+---
+
+import CodeBlock from '@theme/CodeBlock';
+import TestCode from '!!raw-loader!../../scripts/built-in-functions/rand.test.mjs';
+import ImplementCode from '!!raw-loader!../../scripts/tips/rand.mts';
+
+ランダムな数値を取得するためによく見かける関数をまとめました。
+
+## JSでの実装例
+ 
+<CodeBlock language="ts">{ImplementCode}</CodeBlock>
+
+## テスト
+
+<CodeBlock language="js">{TestCode}</CodeBlock>
