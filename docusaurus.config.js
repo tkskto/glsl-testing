@@ -1,6 +1,5 @@
 // @ts-check
-const lightCodeTheme = require('prism-react-renderer/themes/github');
-const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+import { themes } from 'prism-react-renderer';
 
 const math = require('remark-math');
 const katex = require('rehype-katex');
@@ -8,7 +7,7 @@ const katex = require('rehype-katex');
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'GLSL Testing Docs',
-  url: 'https://your-docusaurus-test-site.com', // TODO
+  url: 'https://glsl-testing.vercel.app',
   baseUrl: '/',
   projectName: 'glsl-testing',
   onBrokenLinks: 'throw',
@@ -55,8 +54,8 @@ const config = {
         title: 'GLSL Testing Docs',
       },
       prism: {
-        theme: lightCodeTheme,
-        darkTheme: darkCodeTheme,
+        theme: themes.github,
+        darkTheme: themes.dracula,
       },
     }),
 
