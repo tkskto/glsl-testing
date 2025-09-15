@@ -1,7 +1,6 @@
 ---
 title: 逆関数
 description: 逆関数とは
-slug: /dictionary/inverse
 ---
 
 逆関数とは、ある関数 $y = f(x)$ に対して、$f(x)$ の値を入力すると $x$ の値を出力する関数のことです。

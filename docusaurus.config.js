@@ -1,14 +1,17 @@
 // @ts-check
-const lightCodeTheme = require('prism-react-renderer/themes/github');
-const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+import {themes} from 'prism-react-renderer';
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
+import path from 'node:path';
+import {fileURLToPath} from 'node:url';
 
-const math = require('remark-math');
-const katex = require('rehype-katex');
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'GLSL Testing Docs',
-  url: 'https://your-docusaurus-test-site.com', // TODO
+  url: 'https://glsl-testing.vercel.app',
   baseUrl: '/',
   projectName: 'glsl-testing',
   onBrokenLinks: 'throw',
@@ -25,14 +28,14 @@ const config = {
       ({
         docs: {
           routeBasePath: '/',
-          sidebarPath: require.resolve('./sidebars.js'),
+          sidebarPath: path.resolve(__dirname, './sidebars.js'),
           editUrl: 'https://github.com/tkskto/glsl-testing',
-          remarkPlugins: [math],
-          rehypePlugins: [katex],
+          remarkPlugins: [remarkMath],
+          rehypePlugins: [rehypeKatex],
         },
         blog: false,
         theme: {
-          customCss: require.resolve('./src/css/custom.css'),
+          customCss: path.resolve(__dirname, './src/css/custom.css'),
         },
       }),
     ],
@@ -55,8 +58,8 @@ const config = {
         title: 'GLSL Testing Docs',
       },
       prism: {
-        theme: lightCodeTheme,
-        darkTheme: darkCodeTheme,
+        theme: themes.github,
+        darkTheme: themes.dracula,
       },
     }),
 
@@ -66,4 +69,4 @@ const config = {
   themes: ['@docusaurus/theme-mermaid'],
 };
 
-module.exports = config;
+export default config;

@@ -1,7 +1,6 @@
 ---
 title: DF（Distance Function、距離関数）
 description: DFとは
-slug: /dictionary/df
 ---
 
 距離関数（Distance Function）は`DF`という関数名がつけられることが多いです。「Signed」が頭について、SDF（Signed Distance Function）と呼ばれることもあります。
