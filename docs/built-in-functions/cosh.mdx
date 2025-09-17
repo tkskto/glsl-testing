@@ -1,7 +1,6 @@
 ---
 title: cosh
 description: cosh関数をテストで理解する
-sidebar_position: 3
 reference:
     - https://registry.khronos.org/OpenGL/specs/es/3.2/GLSL_ES_Specification_3.20.html#angle-and-trigonometry-functions
     - https://registry.khronos.org/OpenGL-Refpages/es3/html/cosh.xhtml
@@ -14,6 +13,7 @@ tags:
 import CodeBlock from '@theme/CodeBlock';
 import TestCode from '!!raw-loader!../../scripts/built-in-functions/cosh.test.mjs';
 import ImplementCode from '!!raw-loader!../../scripts/built-in-functions/cosh.mts';
+import LatexPlot from '@site/src/components/LatexPlot';
 
 ## 説明
 
@@ -21,15 +21,13 @@ import ImplementCode from '!!raw-loader!../../scripts/built-in-functions/cosh.mt
 
 三角関数のグラフが円の形をしているのに対して、双曲線余弦のグラフはロープの両端を持ち上げて、真ん中が下がっているような形をしている。
 
-すごいややこしいけど`cosh`と`cos`の関係はなく、`cosh`を`cos`を使って表したりするようなものではない、と理解している。
+<LatexPlot xMin={-3} xMax={3} samples={500} plotFunction={(x) => Math.cosh(x)}>
+    $$
+    y = \cosh(x) = \frac{e^x + e^{-x}}{2}
+    $$
+</LatexPlot>
 
-`cosh`が引数にとる値は角度ではない。式に直すと以下のようになる
-
-$$
-\begin{aligned}
-    cosh(x) &= \frac{e^x + e^{-x}}{2}
-\end{aligned}
-$$
+すごいややこしいけど`cosh`と`cos`の関係はなく、`cosh`を`cos`を使って表したりするようなものではない、と理解している。`cosh`が引数にとる値は角度ではない。
 
 ## JSでの実装例
 

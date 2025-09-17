@@ -1,7 +1,6 @@
 ---
 title: radians
 description: radians関数をテストで理解する
-sidebar_position: 1
 reference:
     - https://registry.khronos.org/OpenGL/specs/es/3.2/GLSL_ES_Specification_3.20.html#angle-and-trigonometry-functions
     - https://registry.khronos.org/OpenGL-Refpages/es3/html/radians.xhtml
@@ -14,12 +13,19 @@ tags:
 import CodeBlock from '@theme/CodeBlock';
 import TestCode from '!!raw-loader!../../scripts/built-in-functions/radians.test.mjs';
 import ImplementCode from '!!raw-loader!../../scripts/built-in-functions/radians.mts';
+import LatexPlot from '@site/src/components/LatexPlot';
 
 ## 説明
 
 度数法で表現される値を弧度法に変換します。
 
 引数に渡せる型は `float`, `vec2`, `vec3`, `vec4` です。
+
+<LatexPlot xMin={-360} xMax={360} samples={400} plotFunction={(x) => x * Math.PI / 180}>
+$$
+y = \frac{\pi}{180}\,x
+$$
+</LatexPlot>
 
 ## JSでの実装例
 

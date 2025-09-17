@@ -1,7 +1,6 @@
 ---
 title: tan
 description: tan関数をテストで理解する
-sidebar_position: 3
 reference:
     - https://registry.khronos.org/OpenGL/specs/es/3.2/GLSL_ES_Specification_3.20.html#angle-and-trigonometry-functions
     - https://registry.khronos.org/OpenGL-Refpages/es3/html/tan.xhtml
@@ -16,12 +15,26 @@ tags:
 import CodeBlock from '@theme/CodeBlock';
 import TestCode from '!!raw-loader!../../scripts/built-in-functions/tan.test.mjs';
 import ImplementCode from '!!raw-loader!../../scripts/built-in-functions/tan.mts';
+import LatexPlot from '@site/src/components/LatexPlot';
 
 ## 説明
 
 引数に渡された値をθとして、`tan(θ)`の値を返す。
 
 `sin`や`cos`と違って連続的ではないグラフが特殊で、使い所がよく分からない。`θ`が`π/4`の時、`1`となる。
+
+<LatexPlot xMin={-3.1} xMax={3.1} yMin={-5} yMax={5} samples={700}
+    plotFunction={(x) => {
+        const c = Math.cos(x);
+        // cos(x) が 0 付近では非連続のため、線を切る
+        if (Math.abs(c) < 0.02) return NaN;
+        return Math.sin(x) / c;
+    }}
+>
+$$
+y = \tan(x)
+$$
+</LatexPlot>
 
 ## JSでの実装例
 

@@ -1,7 +1,6 @@
 ---
 title: sin
 description: sin関数をテストで理解する
-sidebar_position: 3
 reference:
     - https://registry.khronos.org/OpenGL/specs/es/3.2/GLSL_ES_Specification_3.20.html#angle-and-trigonometry-functions
     - https://registry.khronos.org/OpenGL-Refpages/es3/html/sin.xhtml
@@ -16,10 +15,17 @@ tags:
 import CodeBlock from '@theme/CodeBlock';
 import TestCode from '!!raw-loader!../../scripts/built-in-functions/sin.test.mjs';
 import ImplementCode from '!!raw-loader!../../scripts/built-in-functions/sin.mts';
+import LatexPlot from '@site/src/components/LatexPlot';
 
 ## 説明
 
 引数に渡された値をθとして、`sin(θ)`の値を返す。単位円を考えた時、円周上のある点Pのy座標をとる時によく使う。
+
+<LatexPlot xMin={-2 * Math.PI} xMax={2 * Math.PI} samples={600} plotFunction={(x) => Math.sin(x)}>
+$$
+y = \sin(x)
+$$
+</LatexPlot>
 
 ## JSでの実装例
 
