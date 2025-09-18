@@ -16,10 +16,21 @@ tags:
 import CodeBlock from '@theme/CodeBlock';
 import TestCode from '!!raw-loader!../../scripts/built-in-functions/sinh.test.mjs';
 import ImplementCode from '!!raw-loader!../../scripts/built-in-functions/sinh.mts';
+import LatexPlot from '@site/src/components/LatexPlot';
 
 ## 説明
 
-// TODO
+`sinh`は`hyperbolic sine`の略で、双曲線関数の1つ。引数`x`に対する双曲線正弦を返し、GLSLでは`float`だけでなく`vec2`や`vec3`などのベクトルにも要素ごとに適用される。
+
+引数は角度ではなく任意の実数として扱われ、指数関数を使った定義は次の通り。
+
+<LatexPlot xMin={-3} xMax={3} samples={600} plotFunction={(x) => Math.sinh(x)}>
+    $$
+    y = \sinh(x) = \frac{e^x - e^{-x}}{2}
+    $$
+</LatexPlot>
+
+`sinh`は奇関数なので`sinh(-x) = -sinh(x)`が成り立ち、`sin`のような周期性はなく絶対値が大きくなるほど指数関数的に増減する。JavaScriptでは`Math.sinh`が用意されているため、それを呼び出せば簡単に再現できる。
 
 ## JSでの実装例
 
