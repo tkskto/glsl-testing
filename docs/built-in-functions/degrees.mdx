@@ -1,7 +1,6 @@
 ---
 title: degrees
 description: degrees関数をテストで理解する
-sidebar_position: 2
 reference:
     - https://registry.khronos.org/OpenGL/specs/es/3.2/GLSL_ES_Specification_3.20.html#angle-and-trigonometry-functions
     - https://registry.khronos.org/OpenGL-Refpages/es3/html/degrees.xhtml
@@ -14,12 +13,19 @@ tags:
 import CodeBlock from '@theme/CodeBlock';
 import TestCode from '!!raw-loader!../../scripts/built-in-functions/degrees.test.mjs';
 import ImplementCode from '!!raw-loader!../../scripts/built-in-functions/degrees.mts';
+import LatexPlot from '@site/src/components/LatexPlot';
 
 ## 説明
 
 弧度法で表現される値を度数法に変換します。
 
 引数に渡せる型は `float`, `vec2`, `vec3`, `vec4` です。
+
+<LatexPlot xMin={-2 * Math.PI} xMax={2 * Math.PI} samples={400} plotFunction={(x) => x * 180 / Math.PI}>
+$$
+y = \frac{180}{\pi}\,x
+$$
+</LatexPlot>
 
 ## JSでの実装例
 

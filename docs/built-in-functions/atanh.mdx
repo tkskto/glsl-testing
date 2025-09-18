@@ -1,7 +1,6 @@
 ---
 title: atanh
 description: atanh関数をテストで理解する
-sidebar_position: 3
 reference:
     - https://registry.khronos.org/OpenGL/specs/es/3.2/GLSL_ES_Specification_3.20.html#angle-and-trigonometry-functions
     - https://registry.khronos.org/OpenGL-Refpages/es3/html/atanh.xhtml
@@ -14,10 +13,19 @@ tags:
 import CodeBlock from '@theme/CodeBlock';
 import TestCode from '!!raw-loader!../../scripts/built-in-functions/atanh.test.mjs';
 import ImplementCode from '!!raw-loader!../../scripts/built-in-functions/atanh.mts';
+import LatexPlot from '@site/src/components/LatexPlot';
 
 ## 説明
 
-// TODO
+`tanh`は与えられた値を双曲線正接に変換し、結果は-1から1の範囲に収まります。`atanh`はその逆関数で、`tanh(x)`が特定の値になるような`x`を返します。つまり`tanh(atanh(y)) = y`となり、入力`y`は`|y| < 1`である必要があります。境界である`±1`に近づくと値は発散し、グラフは垂直に伸びていくような形になります。
+
+双曲線関数は指数関数から定義されるため、逆関数である`atanh`も自然対数を用いて表現できます。
+
+<LatexPlot xMin={-0.99} xMax={0.99} samples={600} plotFunction={(x) => Math.atanh(x)}>
+$$
+\operatorname{atanh}(x) = \frac{1}{2}\ln\left(\frac{1 + x}{1 - x}\right)
+$$
+</LatexPlot>
 
 ## JSでの実装例
 

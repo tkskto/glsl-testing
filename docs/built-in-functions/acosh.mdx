@@ -1,7 +1,6 @@
 ---
 title: acosh
 description: acosh関数をテストで理解する
-sidebar_position: 3
 reference:
     - https://registry.khronos.org/OpenGL/specs/es/3.2/GLSL_ES_Specification_3.20.html#angle-and-trigonometry-functions
     - https://registry.khronos.org/OpenGL-Refpages/es3/html/acosh.xhtml
@@ -14,10 +13,17 @@ tags:
 import CodeBlock from '@theme/CodeBlock';
 import TestCode from '!!raw-loader!../../scripts/built-in-functions/acosh.test.mjs';
 import ImplementCode from '!!raw-loader!../../scripts/built-in-functions/acosh.mts';
+import LatexPlot from '@site/src/components/LatexPlot';
 
 ## 説明
 
 `cosh`は`x`における双曲線余弦を返す一方で、`acosh`は`x`における逆双曲線余弦を返します。つまり、`cosh`の逆関数です。
+
+<LatexPlot xMin={1} xMax={5} samples={500} plotFunction={(x) => Math.acosh(x)}>
+$$
+y = \operatorname{acosh}(x)
+$$
+</LatexPlot>
 
 ## JSでの実装例
 

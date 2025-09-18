@@ -1,7 +1,6 @@
 ---
 title: atan
 description: atan関数をテストで理解する
-sidebar_position: 3
 reference:
     - https://registry.khronos.org/OpenGL/specs/es/3.2/GLSL_ES_Specification_3.20.html#angle-and-trigonometry-functions
     - https://registry.khronos.org/OpenGL-Refpages/es3/html/atan.xhtml
@@ -14,10 +13,17 @@ tags:
 import CodeBlock from '@theme/CodeBlock';
 import TestCode from '!!raw-loader!../../scripts/built-in-functions/atan.test.mjs';
 import ImplementCode from '!!raw-loader!../../scripts/built-in-functions/atan.mts';
+import LatexPlot from '@site/src/components/LatexPlot';
 
 ## 説明
 
 `tan`は角度を与えると対応する正接値を返す一方で、`atan`は正接値を与えると対応する角度を返す。
+
+<LatexPlot xMin={-5} xMax={5} yMin={-Math.PI/2} yMax={Math.PI/2} samples={600} plotFunction={(x) => Math.atan(x)}>
+$$
+y = \arctan(x)
+$$
+</LatexPlot>
 
 x, y, z軸にそって回転する際に使う。らしい。
 

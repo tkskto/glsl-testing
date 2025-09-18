@@ -11,12 +11,25 @@ tags:
 import CodeBlock from '@theme/CodeBlock';
 import TestCode from '!!raw-loader!../../scripts/built-in-functions/fract.test.mjs';
 import ImplementCode from '!!raw-loader!../../scripts/built-in-functions/fract.mts';
+import LatexPlot from '@site/src/components/LatexPlot';
 
 ## 説明
 
 `fract`は、引数に与えられた実数（浮動小数点数）から整数部分を引いた、小数部分（fractional part）を返す関数です。
 
 引数が負の値の場合でも、常に非負の小数部分が得られます。
+
+<LatexPlot xMin={-3.5} xMax={3.5} yMin={0} yMax={1} samples={800}
+    plotFunction={(x) => {
+        // 跳躍点（整数付近）では線を切る
+        if (Math.abs(x - Math.round(x)) < 0.02) return NaN;
+        return x - Math.floor(x);
+    }}
+>
+$$
+y = \operatorname{fract}(x) = x - \lfloor x \rfloor
+$$
+</LatexPlot>
 
 ## JSでの実装例
 
