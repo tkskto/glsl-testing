@@ -4,7 +4,6 @@ import {vec3, vector3} from '../basic-types/vec3.mts';
 import {vec4, vector4} from '../basic-types/vec4.mts';
 
 const hyperbolicSine = (x: number) => {
-    // JavaScriptの`Math`オブジェクトに`sinh`があるのでそれを使えば良い。
     const result = Math.sinh(x);
 
     // `Math.sinh(-0)`は-0を返すので0にそろえておく。
