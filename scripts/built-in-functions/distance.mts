@@ -1,7 +1,7 @@
-import type {genFType} from '../../types';
-import {vector2} from '../basic-types/vec2.mjs';
-import {vector3} from '../basic-types/vec3.mjs';
-import {vector4} from '../basic-types/vec4.mjs';
+import type {genFType} from '../../types/index.mts';
+import {vector2} from '../basic-types/vec2.mts';
+import {vector3} from '../basic-types/vec3.mts';
+import {vector4} from '../basic-types/vec4.mts';
 
 export function distance(x: genFType, y: genFType): number {
     if (typeof x === 'number' && typeof y === 'number') {
