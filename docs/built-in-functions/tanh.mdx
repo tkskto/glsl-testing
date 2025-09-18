@@ -1,7 +1,6 @@
 ---
 title: tanh
 description: tanh関数をテストで理解する
-sidebar_position: 3
 reference:
     - https://registry.khronos.org/OpenGL/specs/es/3.2/GLSL_ES_Specification_3.20.html#angle-and-trigonometry-functions
     - https://registry.khronos.org/OpenGL-Refpages/es3/html/tanh.xhtml
@@ -16,10 +15,21 @@ tags:
 import CodeBlock from '@theme/CodeBlock';
 import TestCode from '!!raw-loader!../../scripts/built-in-functions/tanh.test.mjs';
 import ImplementCode from '!!raw-loader!../../scripts/built-in-functions/tanh.mts';
+import LatexPlot from '@site/src/components/LatexPlot';
 
 ## 説明
 
-// TODO
+`tanh`は`hyperbolic tangent`の略で、双曲線関数の1つ。`x`に対する双曲線正接を返し、GLSLではスカラーだけでなく`vec2`や`vec3`などのベクトルにも要素ごとに適用される。
+
+`tanh`は`x`を角度ではなく任意の実数として扱う。`sinh`と`cosh`を使った式にすると以下のようになる。
+
+<LatexPlot xMin={-3} xMax={3} samples={600} plotFunction={(x) => Math.tanh(x)}>
+    $$
+    y = \tanh(x) = \frac{\sinh(x)}{\cosh(x)} = \frac{e^x - e^{-x}}{e^x + e^{-x}}
+    $$
+</LatexPlot>
+
+双曲線余弦`cosh(x)`は常に0にならないため、ゼロ除算にはならない。結果は-1から1の開区間に収まり、`x`が大きくなるほど1に近づき、小さくなるほど-1に近づく。奇関数なので`tanh(-x) = -tanh(x)`でもある。
 
 ## JSでの実装例
 
